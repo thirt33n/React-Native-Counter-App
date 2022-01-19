@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "counterApp",
+    "slug": "counterApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "counterApp"
+}
