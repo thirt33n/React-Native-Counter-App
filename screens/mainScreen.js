@@ -9,21 +9,25 @@ import Button from '../components';
 export default function MainScreen(){
     
         const [count, setCount] = useState(0);
+        const [taps, setTaps]  = useState(0);
 
         function increaser(){
 
             setCount(count + 1);
+            setTaps(taps + 1);
         }
 
         function decreaser(){
 
             setCount(count - 1);
+            setTaps(taps + 1);
         }
 
         function reset(){
             setCount(count - count);
+            setTaps(taps + 1);
         }
-
+        
 
         return (
             <View style={styles.screen}>
@@ -32,7 +36,7 @@ export default function MainScreen(){
                 style={{ flex:1,alignItems:'center',
                 justifyContent:'center', }}>
                     <Text style={styles.info}> ULTIMATE COUNTER </Text>
-
+                    <Text style= {styles.tapper}>Number of taps: {taps}</Text>
                     <View style={styles.board}>
 
                         <Text style={{ fontSize: 90,color:'#FF2281',marginTop:'9%',alignContent: 'center'}}>{count}</Text>
@@ -70,7 +74,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '60%',
         marginBottom: '60%',
-        marginTop: '50%',
+        marginTop: '25%',
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
@@ -82,10 +86,19 @@ const styles = StyleSheet.create({
 
     },
     info: {
-        color: 'grey',
+        color: '#EBECE8',
         marginTop: '20%',
         fontSize: 30,
         fontFamily: 'monospace',
         fontWeight: 'bold',
+        backgroundColor: 'rgba(0,0,0,0.9)',
+        borderRadius: 10,
+    },
+    tapper: {
+        color: 'grey',
+        fontSize: 15,
+        marginTop: '25%',
+        fontFamily: 'monospace',
+
     }
 })
