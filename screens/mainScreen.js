@@ -2,11 +2,29 @@ import { StatusBar } from 'expo-status-bar';
 import React,{ useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Button } from 'react-native-web';
+import Button from '../components';
+
+
 
 export default function MainScreen(){
     
         const [count, setCount] = useState(0);
+
+        function increaser(){
+
+            setCount(count + 1);
+        }
+
+        function decreaser(){
+
+            setCount(count - 1);
+        }
+
+        function reset(){
+            setCount(count - count);
+        }
+
+
         return (
             <View style={styles.screen}>
                 <StatusBar style='auto' />
@@ -14,9 +32,27 @@ export default function MainScreen(){
                 style={{ flex:1,alignItems:'center',
                 justifyContent:'center', }}>
                     <Text style={styles.info}> ULTIMATE COUNTER </Text>
+
                     <View style={styles.board}>
-                        <Text style={{ fontSize: 90,color:'#FF2281',marginTop:'100%',textAlign: 'center'}}>{count}</Text>
+
+                        <Text style={{ fontSize: 90,color:'#FF2281',marginTop:'9%',alignContent: 'center'}}>{count}</Text>
+
                     </View>
+                    <View style={ { backgroundColor:'rgba(128,128,128,0.6)',height: '0.4%',width: '90%',borderRadius: 20,marginTop: '-50%' } }></View>
+                    
+                    <View style={{ display:'flex', flexDirection:'row',flex: 1,marginLeft: '20%',marginTop: "10%" }}>
+                        <View style={{ display:'flex',flex: 0.6,}}>
+                            <Button title={"+"} action={increaser}/>
+                        </View>
+                        <View style={{ display:'flex',flex: 0.6,}}>
+                            <Button title={"-"} action={decreaser}/>
+                        </View>
+                    </View>
+
+                    <View style={{ display:'flex', alignItems:'center',flex: 0.3,marginBottom:'20%',}}>
+                        <Button title={'reset'} action={reset}/>
+                    </View>
+
                 </LinearGradient>
             </View>
         );
@@ -25,14 +61,28 @@ export default function MainScreen(){
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
+        display: 'flex',
+        justifyContent: 'center',
     },
     board: {
+        display: 'flex',
+        backgroundColor: 'rgba(0,0,0,0.4)',
         flex: 1,
-        width: '50%',
+        width: '60%',
+        marginBottom: '60%',
+        marginTop: '50%',
+        borderRadius: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 3,
+        borderColor: '#4DA6FF',
+        borderBottomColor: '#4DFFFF',
+        borderTopColor: '#FF4D80',
+        paddingBottom: 5,
 
     },
     info: {
-        color: '#0062FF',
+        color: 'grey',
         marginTop: '20%',
         fontSize: 30,
         fontFamily: 'monospace',
