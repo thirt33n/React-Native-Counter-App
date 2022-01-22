@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
 
     },
     info: {
-        color: '#EBECE8',
+        color: '#15F4F0',
         marginTop: '20%',
         fontSize: 30,
         fontFamily: 'monospace',
