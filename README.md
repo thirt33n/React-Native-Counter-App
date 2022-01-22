@@ -10,14 +10,14 @@ Guess what the app does? Yeah, it counts numbers,taps and you can reset the numb
 Here are few images that'll show you how it looks.
 
 <span>
-<img src=" screenshots/initial.jpg">
-<img src=" screenshots/aft4plus.jpg">
-<img src=" screenshots/aftoneminus.jpg">
-<img src=" screenshots/aftreset.jpg">
-<img src=" screenshots/negative.jpg">
+<img src="screenshots/initial.jpg" height=777.5, width=360>
+<img src="screenshots/aft4plus.jpg" height=777.5, width=360>
+<img src="screenshots/aftoneminus.jpg" height=777.5, width=360>
+<img src="screenshots/aftreset.jpg" height=777.5, width=360>
+<img src="screenshots/negative.jpg" height=777.5, width=360>
 </span>
 
-The first image shows how the app looks initially, the 2nd,3rd and 4th images show the result after 4 '+' taps, 1 '-' tap and the reset respectively. The last button shows the negative numbers. 
+The first image shows how the app looks initially, the 2nd,3rd and 4th images show the result after 4 '+' taps, 1 '-' tap and the reset respectively. The last image shows the negative numbers. 
 
 ## Author
 
