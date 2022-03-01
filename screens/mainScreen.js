@@ -3,29 +3,35 @@ import React,{ useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Button from '../components';
-
+import {useCounterContext/*,useTapContext*/} from '../contexts/contextProvider';
 
 
 export default function MainScreen(){
     
-        const [count, setCount] = useState(0);
-        const [taps, setTaps]  = useState(0);
+
+        const counterContext = useCounterContext();
+       //const TapContext = useTapContext();                     
+       const [taps,setTaps] = useState(0);
 
         function increaser(){
 
-            setCount(count + 1);
-            setTaps(taps + 1);
+            counterContext.setCount(counterContext.count+1)
+            setTaps(taps+1)
+           //TapContext.setTaps(TapContext.taps+1)
+            
         }
 
         function decreaser(){
 
-            setCount(count - 1);
-            setTaps(taps + 1);
+            counterContext.setCount(counterContext.count-1)
+            setTaps(taps+1)
+           //TapContext.setTaps(TapContext.taps+1)
         }
 
         function reset(){
-            setCount(count - count);
-            setTaps(taps + 1);
+            counterContext.setCount(counterContext.count-counterContext.count)
+            setTaps(taps+1)
+           // TapContext.setTaps(TapContext.taps+1)
         }
         
 
@@ -36,10 +42,10 @@ export default function MainScreen(){
                 style={{ flex:1,alignItems:'center',
                 justifyContent:'center', }}>
                     <Text style={styles.info}> ULTIMATE COUNTER </Text>
-                    <Text style= {styles.tapper}>Number of taps: {taps}</Text>
+                    <Text style= {styles.tapper}>Number of taps: {taps} </Text>     
                     <View style={styles.board}>
 
-                        <Text style={{ fontSize: 90,color:'#FF2281',marginTop:'9%',alignContent: 'center'}}>{count}</Text>
+                        <Text style={{ fontSize: 90,color:'#FF2281',marginTop:'9%',alignContent: 'center'}}>{counterContext.count}</Text>
 
                     </View>
                     <View style={ { backgroundColor:'rgba(128,128,128,0.6)',height: '0.4%',width: '90%',borderRadius: 20,marginTop: '-50%' } }></View>
